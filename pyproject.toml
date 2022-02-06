@@ -1,0 +1,24 @@
+[tool.poetry]
+name = "py-polynomial-solver"
+version = "0.1.0"
+description = ""
+authors = ["Jeffrey Lemein <jeffrey.lemein@gmail.com>"]
+
+[tool.poetry.dependencies]
+python = "^3.8"
+pyqtgraph = "^0.12.3"
+PyQt5 = "^5.15.6"
+coverage = "^6.3.1"
+matplotlib = "^3.5.1"
+
+[tool.poetry.scripts]
+app = "py_polynomial_solver.main:main"
+test = "scripts:test"
+coverage = "scripts:coverage"
+
+[tool.poetry.dev-dependencies]
+pytest = "^5.2"
+
+[build-system]
+requires = ["poetry-core>=1.0.0"]
+build-backend = "poetry.core.masonry.api"
