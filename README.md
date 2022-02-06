@@ -2,8 +2,7 @@
 
 (in progress)
 This project is created to serve as educational content on what it means to design according to the model view controller (MVC) design or paradigm.
-This is a polynomial solver and plotter. Evidently we need a concept of a **polynomial**. A polynomial forms our model.
-The model can in theorey come from anywhere, such as from a database or from any other data source. In this case the polynomial comes from an interactable dialog. The controller
+The model can in theory come from anywhere, such as from a database or from any other data source. In this case the polynomial comes from an interactable dialog. The controller
 is responsible for loading data into the polynomial model.
 
 The following **models** are present:
