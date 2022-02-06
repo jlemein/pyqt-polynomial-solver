@@ -1,3 +1,5 @@
+# PyQt Polynomial Solver
+
 (in progress)
 This project is created to serve as educational content on what it means to design according to the model view controller (MVC) design or paradigm.
 This is a polynomial solver and plotter. Evidently we need a concept of a **polynomial**. A polynomial forms our model.
