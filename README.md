@@ -33,6 +33,8 @@ sudo apt install python3.8
 
 # install latest poetry (1.12+)
 curl -sSL https://install.python-poetry.org | python3 -
+
+# install the python dependencies (will install in a virtual environment)
 poetry install
 
 # Run the application
