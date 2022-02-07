@@ -15,18 +15,12 @@ class PolynomialSolverApp(QMainWindow):
         self.setMinimumSize(QSize(640, 480))    
         self.setWindowTitle("Hello world - pythonprogramminglanguage.com")
         
-        self.polynomial = Polynomial()
+        self.polynomials = [Polynomial([10, 20, 30, 40])]
 
         self.editPolynomialButton = QPushButton("Edit")
         self.editPolynomialButton.clicked.connect(self.edit_button_clicked)
         
         self.graphWidget = pg.PlotWidget()
-
-        hour = range(1,11)
-        temperature = [30, 32, 34, 32, 33, 31, 29, 32, 35, 45];
-        x = np.arange(-10, 10, 1)
-        y = x*x + 10 *x +10
-        self.graphWidget.plot(x, y)
 
         # centralWidget = QWidget(self)          
         # self.setCentralWidget(centralWidget)   
@@ -36,7 +30,7 @@ class PolynomialSolverApp(QMainWindow):
 
         #mathText=r'$X_k = \sum_{n=0}^{N-1} x_n . e^{\frac{-i2\pi kn}{N}}$'
         mathText=r'$x^2 - 10x + 10$'
-        
+        self.updateCharts()
         
         layout = QVBoxLayout(self)
         layout.addWidget(title)
@@ -47,10 +41,20 @@ class PolynomialSolverApp(QMainWindow):
         widget = QWidget()
         widget.setLayout(layout)
         self.setCentralWidget(widget)
+
+    def updateCharts(self):
+        x = np.arange(-10, 10, 1)
+        y = np.power(self.polynomials[0].coefficients(), np.arange(0,4))
+
+        self.graphWidget.plot(x, y)
     
     def edit_button_clicked(self):
-        dlg = PolynomialEditorDialog(self.polynomial)
+        print([1,2,3,4,5])
+        dlg = PolynomialEditorDialog(self.polynomials)
         dlg.exec()
+
+        self.polynomials = dlg.polynomials
+        self.updateCharts()
         
 
 def main():
